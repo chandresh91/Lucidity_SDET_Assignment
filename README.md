@@ -1,6 +1,6 @@
 # TestNG Test Suite
 
-This project contains test cases for validating the Zomato Cart Offer functionality using TestNG. The test execution is configured through the `testng.xml` file.
+This project contains test cases for validating the Zomato Cart Offer functionality. The test execution is configured through the `testng.xml` file.
 
 ## Prerequisites
 
@@ -48,13 +48,16 @@ This project contains test cases for validating the Zomato Cart Offer functional
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
    <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-   <suite name="Zomato Cart Offer Validation Suite">
-       <test name="Test1">
-           <classes>
-               <class name="com.zomato.tests.Cart_Tests" />
-           </classes>
-       </test>
-   </suite>
+   <suite name="Suite">
+	<listeners>
+		<listener class-name="api.utility.ExtentReportManager"></listener>
+	</listeners>
+	<test name="Test1">
+		<classes>
+			<class name="api.test.Cart_Tests" />
+		</classes>
+	</test>
+</suite> 
    ```
 
 2. Run the tests using Maven:
