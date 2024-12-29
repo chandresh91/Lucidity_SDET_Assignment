@@ -55,7 +55,7 @@ public class Cart_Tests {
 	}
 
 	@Test(description="After Applying X% of discount cart value should be greater than or equal to 0")
-	public void testCartValue() {
+	public void testCartValueWithXper() {
 		setup.createOffer(2, "FLAT X%", 10, new String[]{"p1"});
 		Response response = setup.applyOffer(0, 2, 2);
 		int finalCartValue = response.jsonPath().getInt("cart_value");
@@ -63,7 +63,7 @@ public class Cart_Tests {
 	}
 
 	@Test(description="After Applying discount cart value should be greater than or equal to 0")
-	public void testCartValue2() {
+	public void testCartValueXAmount() {
 		setup.createOffer(2, "FLATX", 10, new String[]{"p1"});
 		Response response = setup.applyOffer(9, 2, 2);
 		int finalCartValue = response.jsonPath().getInt("cart_value");
