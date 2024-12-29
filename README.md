@@ -58,7 +58,7 @@ This project contains test cases for validating the Zomato Cart Offer functional
 		</classes>
 	</test>
 </suite> 
-   ```
+   
 
 2. Run the tests using Maven:
    ```bash
