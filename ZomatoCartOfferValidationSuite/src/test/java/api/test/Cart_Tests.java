@@ -75,6 +75,14 @@ public class Cart_Tests {
 		Response response = setup.applyOffer(-20, 2, 2);
 		response.then().statusCode(400);
 	}
+	
+	@Test(description="if offer value is negative % then cart values should not change")
+	public void testNegativeOfferValuePer() {
+		setup.createOffer(2, "FLAT X%", -10, new String[]{"p1"});
+		Response response = setup.applyOffer(100, 2, 2);
+		int finalCartValue = response.jsonPath().getInt("cart_value");
+		assertEquals(finalCartValue, 100);
+	}
 	@Test(description="if offer value is negative then cart values should not change")
 	public void testNegativeOfferValue() {
 		setup.createOffer(2, "FLATX", -10, new String[]{"p1"});
