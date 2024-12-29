@@ -1,4 +1,4 @@
-# TestNG Test Suite
+# Zomato Cart Offer Testing
 
 This project contains test cases for validating the Zomato Cart Offer functionality. The test execution is configured through the `testng.xml` file.
 
